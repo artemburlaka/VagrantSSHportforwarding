@@ -66,7 +66,7 @@ Vagrant.configure("2") do |config|
    config.vm.provision "shell", inline: <<-SHELL
      sudo apt-get update
      sudo apt-get install -y apache2
-	 sudo cp /home/key/ub1.pem /home/ub1.pem
+	 sudo cp /vagrant/ub1.pem /home/ub1.pem
 	 sudo chmod 400 /home/ub1.pem
 	 sudo ssh -i "/home/ub1.pem" -n -tt -o StrictHostKeyChecking=no -R 8080:localhost:80 ubuntu@ec2-52-14-142-147.us-east-2.compute.amazonaws.com
    SHELL
